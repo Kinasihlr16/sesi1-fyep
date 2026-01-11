@@ -17,12 +17,12 @@ const HeroSection =() => {
                 </p>
                 <div className="flex gap-5 mt-14 ">
                     <Button> Explore More <FiFastForward/> </Button>
-                    <Button variant="ghost"> Explore More <Image src="images\icon-play-video.svg" alt="icon playvideo" width={29} height={29}/></Button>
+                    <Button variant="ghost"> Watch Video <Image src="/images\icon-play-video.svg" alt="icon playvideo" width={29} height={29}/></Button>
                 </div>
                 </div>
-                <Image src="/images/img-hero.svg" alt="image sporton hero" width={700} height={950} className="absolute -right-25 top-1/2 -translate-y-1/2"></Image>
+                <Image src="/images/img-hero.svg" alt="image sporton hero" width={700} height={700} className="absolute -right-25 top-1/2 -translate-y-1/2 z-0"></Image>
             </div>
-                <Image src="/images/img-ornament-hero.svg" alt="image sorton" width={420} height={420} className="absolute -right-[200px] top-1/2 -translate-y-1/2"></Image>
+                <Image src="/images/img-ornament-hero.svg" alt="image sorton" width={420} height={420} className="absolute -right-[200px] top-1/2 -translate-y-1/2 z-0"></Image>
                 
         </section>
     )

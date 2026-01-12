@@ -17,7 +17,7 @@ const PaymentSteps = () => {
   return (
     <CardwithHeader title="Payment Steps">
       <div className="p-5">
-        <ol className="list-decimal tex-xs pl-2 flex-col gap-4 mb-5">
+        <ol className="list-decimal tex-xs pl-2 flex flex-col gap-4 mb-5">
           <li>
             Transfer the total amount of <b>Rp. 1.035.000</b> to your preferred
             bank account listed under 'Payment Options' (BCA, Mandiri, or BTPN).

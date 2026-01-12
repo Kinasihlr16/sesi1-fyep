@@ -26,7 +26,7 @@ const PaymentOptions = () => {
       <CardwithHeader title="Payment Options">
         {paymentList.map((payment, index) => (
           <div className="flex gap-5 p-5 border-b border-gray-100" key={index}>
-            <div className="bg-blue-100 p-4 text-blue-500 h-fit slef-center">
+            <div className="bg-blue-100 p-4 text-blue-500 h-fit self-center">
               <FiCreditCard size={24} />
             </div>
             <div className="self-center">

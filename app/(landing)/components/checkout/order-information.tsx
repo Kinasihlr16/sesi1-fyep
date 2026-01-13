@@ -32,7 +32,7 @@ const OrderInformation =({formData, setFormData}: TOrderInformation) => {
             <div className="input-group">
               <label htmlFor="customerContact">Number</label>
               <input
-                type="number"
+                type="text"
                 placeholder="Type your WhatsApp number"
                 id="customerContact"
                 name="customerContact"

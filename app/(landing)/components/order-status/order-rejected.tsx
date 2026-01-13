@@ -1,8 +1,6 @@
 "use client";
 
-import Image from "next/image";
-import Button from "../ui/button";
-import { FiAlertCircle, FiRefreshCw } from "react-icons/fi";
+import { FiAlertCircle} from "react-icons/fi";
 
 const OrderRejected = () => {
   return (

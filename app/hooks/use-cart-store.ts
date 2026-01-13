@@ -1,9 +1,6 @@
-"use client";
-
 import { create } from "zustand";
-import { Product } from "../types";
 import { persist } from "zustand/middleware";
-import CartItem from "../(landing)/components/checkout/cart-items";
+import { Product } from "../types";
 
 export interface CartItem extends Product {
   qty: number;
@@ -11,7 +8,7 @@ export interface CartItem extends Product {
 
 export interface CustomerInfo {
   customerName: string;
-  customerContact: NumberConstructor;
+  customerContact: number | null;
   customerAddress: string;
 }
 
@@ -34,7 +31,7 @@ export const useCartStore = create<CartStore>()(
       },
       addItem: (product, qty = 1) => {
         const items = get().items;
-        const existingItem = items.find((item) => item._id == product._id);
+        const existingItem = items.find((item) => item._id === product._id);
 
         if (existingItem) {
           set({

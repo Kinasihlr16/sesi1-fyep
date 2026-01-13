@@ -6,7 +6,7 @@ import { getImageUrl } from "@/app/lib/api";
 
 
 export type TPageProps = {
-  params: Promise<{id: string}>;
+  params: {id: string}>;
 };
 const ProductDetail = async ({params} : TPageProps) => {
   const {id} = params;

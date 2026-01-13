@@ -1,3 +1,5 @@
+import { getImageUrl } from "@/app/lib/api";
+import { category } from "@/app/types";
 import Image from "next/image";
 import Link from "next/link";
 import { FiArrowRight } from "react-icons/fi";
@@ -8,29 +10,13 @@ const CategoryList = [
         name: "Running",
         imgUrl: "category-running.svg",
     },
-    {
-        name: "Tennis",
-        imgUrl: "category-tennis.svg",
-    },
-    {
-        name: "BasketBall",
-        imgUrl: "category-basketball.svg",
-    },
-    {
-        name: "Football",
-        imgUrl: "category-football.svg",
-    },
-    {
-        name: "Badminton",
-        imgUrl: "category-badminton.svg",
-    },
-    {
-        name: "Swimming",
-        imgUrl: "category-swimming.svg",
-    },
 ]
 
-const CategoriesSection = () => {
+type TCategoriesProps = {
+    categories: category[];
+}
+
+const CategoriesSection = ({categories}: TCategoriesProps) => {
     return (
         <section id="category-section" className="container mx-auto px-6 pb-20">
             <div className="flex justify-between">
@@ -41,10 +27,16 @@ const CategoriesSection = () => {
                     </Link>
             </div>
             <div className="grid grid-cols-6 gap-12 mt-8">
-                {CategoryList.map((category, index) => (
-                    <div className="rounded-lg bg-gradient-to-r from-[#F1F1F1] to-[#F7F7F7] w-full aspect-square flex justify-center" key={index}>
+                {categories.map((category) => (
+                    <div className="rounded-lg bg-gradient-to-r from-[#F1F1F1] to-[#F7F7F7] w-full aspect-square flex justify-center" 
+                    key={category._id}>
                     <div className="self-center">
-                        <Image src={`/images/categories/${category.imgUrl}`} width={86} height={86} alt="category.name" className="mb-[10px]"
+                        <Image 
+                        src={getImageUrl(category.imageUrl)}
+                        width={86}
+                        height={86} 
+                        alt="category.name" 
+                        className="mb-[10px]"
                     />
                     <div className="text-primary font-medium text-xl text-center">
                         {category.name}

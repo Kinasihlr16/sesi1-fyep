@@ -1,32 +1,54 @@
-import CardwithHeader from "../ui/card-with-header";
+"use client";
 
-const OrderInformation =() => {
+import CardwithHeader from "../ui/card-with-header";
+import { CustomerInfo } from "@/app/hooks/use-cart-store";
+
+type TOrderInformation = {
+  formData: CustomerInfo;
+  setFormData: React.Dispatch<React.SetStateAction<CustomerInfo>>;
+}
+
+const OrderInformation =({formData, setFormData}: TOrderInformation) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData({...formData, [e.target.name]: e.target.value});
+  };
     return (
       <CardwithHeader title="Order Information">
         <div className="p-5">
           <div>
             <div className="input-group">
-              <label htmlFor="full_name">Full Name</label>
+              <label htmlFor="customerName">Full Name</label>
               <input
                 type="text"
                 placeholder="Type your full name"
-                id="full_name"
+                id="customerName"
+                name="customerName"
+                value={formData.customerName}
+                onChange={handleInputChange}
               />
             </div>
             <div className="input-group">
-              <label htmlFor="wa_number">Number</label>
+              <label htmlFor="customerContact">Number</label>
               <input
-                type="text"
+                type="number"
                 placeholder="Type your WhatsApp number"
-                id="wa_number"
+                id="customerContact"
+                name="customerContact"
+                value={formData.customerContact as number}
+                onChange={handleInputChange}
               />
             </div>
             <div className="input-group">
-              <label htmlFor="shipping_address">Shipping Address</label>
+              <label htmlFor="CustomerAddress">Shipping Address</label>
               <textarea
                 placeholder="Type your shipping address"
-                id="shipping_address"
+                id="customerAddress"
+                name="customerAddress"
                 rows={7}
+                value={formData.customerAddress}
+                onChange={handleInputChange}
               />
             </div>
           </div>

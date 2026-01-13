@@ -11,7 +11,7 @@ const{push} = useRouter();
 const {customerInfo, setCustomerInfo} = useCartStore();
 const [formData, setFormData] = useState<CustomerInfo>({
   customerName: "",
-  customerContact: null,
+  customerContact: "",
   customerAddress: "",
 });
 

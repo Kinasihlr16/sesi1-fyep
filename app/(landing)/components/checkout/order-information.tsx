@@ -36,7 +36,7 @@ const OrderInformation =({formData, setFormData}: TOrderInformation) => {
                 placeholder="Type your WhatsApp number"
                 id="customerContact"
                 name="customerContact"
-                value={formData.customerContact as number}
+                value={formData.customerContact}
                 onChange={handleInputChange}
               />
             </div>

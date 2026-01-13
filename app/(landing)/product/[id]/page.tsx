@@ -6,10 +6,10 @@ import { getImageUrl } from "@/app/lib/api";
 
 
 export type TPageProps = {
-  params: {id: string};
+  params: Promise<{id: string}>;
 };
 const ProductDetail = async ({params} : TPageProps) => {
-  const {id} = params;
+  const {id} = await params;
 
   const product = await getProductDetail(id);
 

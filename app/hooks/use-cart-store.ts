@@ -11,7 +11,7 @@ export interface CartItem extends Product {
 
 export interface CustomerInfo {
   customerName: string;
-  customerContact: string;
+  customerContact: NumberConstructor;
   customerAddress: string;
 }
 

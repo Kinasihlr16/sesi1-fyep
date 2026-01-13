@@ -19,7 +19,7 @@ export async function fetchAPI<T>(
         }
         throw new Error(errorMessage);
     }
-    return res.json()
+    return res.json();
 }
 
 export function getImageUrl(path : string) {

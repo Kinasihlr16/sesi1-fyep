@@ -9,7 +9,7 @@ export type TPageProps = {
   params: Promise<{id: string}>;
 };
 const ProductDetail = async ({params} : TPageProps) => {
-  const {id} = await params;
+  const {id} = params;
 
   const product = await getProductDetail(id);
 

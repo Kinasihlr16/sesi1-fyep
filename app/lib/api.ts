@@ -1,5 +1,3 @@
-import { RequestInit } from "next/dist/server/web/spec-extension/request";
-
 export async function fetchAPI<T>(
     endpoint: string,
     options?: RequestInit
@@ -17,6 +15,7 @@ export async function fetchAPI<T>(
         } catch(e) {
             console.log(e);
         }
+        
         throw new Error(errorMessage);
     }
     return res.json();
@@ -25,4 +24,11 @@ export async function fetchAPI<T>(
 export function getImageUrl(path : string) {
     if (path.startsWith("http"))  return path;
     return `${process.env.NEXT_PUBLIC_API_ROOT}/${path}`;
+}
+
+export function getAuthHeaders() {
+    const token = localStorage.getItem("token");
+    return {
+        Authorization: `Bearer ${token}`,
+    }
 }

@@ -1,3 +1,5 @@
+"use client";
+
 import { get } from "http";
 import { getAllCategories } from "../services/category.services";
 import CategoriesSection from "./components/home/categories";

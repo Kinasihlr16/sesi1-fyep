@@ -1,5 +1,5 @@
 import { getImageUrl } from "@/app/lib/api";
-import { category } from "@/app/types";
+import { Category } from "@/app/types";
 import Image from "next/image";
 import Link from "next/link";
 import { FiArrowRight } from "react-icons/fi";
@@ -13,7 +13,7 @@ const CategoryList = [
 ]
 
 type TCategoriesProps = {
-    categories: category[];
+    categories: Category[];
 }
 
 const CategoriesSection = ({categories}: TCategoriesProps) => {

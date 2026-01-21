@@ -1,5 +1,3 @@
-"use client";
-
 import { fetchAPI, getAuthHeaders } from "../lib/api";
 import { Category } from "../types";
 

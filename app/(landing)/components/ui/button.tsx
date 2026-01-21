@@ -6,7 +6,7 @@ type TButtonProps ={
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 const Button =({children, className, variant="primary", size="normal", ...props}: TButtonProps) => {
-    const baseStyles = "inline-flex gap-2 duration-300 justify-center items-center cursor-pointer hover:scale-105";
+    const baseStyles = "inline-flex gap-2 duration-300 justify-center items-center cursor-pointer hover:scale-105 whitespace-nowrap";
     
     const variants = {
         primary : "bg-primary text-white hover:bg-primary/85",
@@ -16,7 +16,7 @@ const Button =({children, className, variant="primary", size="normal", ...props}
 
     const sizes ={
         normal : "py-4 px-9",
-        small : "py-[10px] px-k7",
+        small : "py-[10px] px-7",
     };
     
     return (

@@ -6,7 +6,7 @@ import { Bank } from "@/app/types";
 import { createBank, updateBank } from "@/app/services/bank.service";
 import { toast } from "react-toastify";
 
-type TCategoryModalProps = {
+type TBankInfoModalProps = {
   isOpen: boolean;
   onClose: () => void;
   bank: Bank | null;
@@ -14,16 +14,15 @@ type TCategoryModalProps = {
 };
 
 
-const BankInfoModal = ({ isOpen, onClose, onSuccess }: TCategoryModalProps) => {
+const BankInfoModal = ({ isOpen, onClose, bank, onSuccess }: TBankInfoModalProps) => {
       const [isSubmitting, setIsSubmitting] = useState(false)
-      const [formData, setFormData] = useState<Partial<Bank>({
+      const [formData, setFormData] = useState<Partial<Bank>>({
         accountName: "",
         accountNumber: "",
         bankName:"",
       });
 
       const isEditMode = !!bank;
-
       const handleChange = (
         e: React.ChangeEvent<
           HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
@@ -61,8 +60,8 @@ const BankInfoModal = ({ isOpen, onClose, onSuccess }: TCategoryModalProps) => {
       useEffect(() => {
         if (isEditMode && isOpen) {
           setFormData ({
-            acountName: bank.accountName,
-            acountNumber: bank.accountNumber,
+            accountName: bank.accountName,
+            accountNumber: bank.accountNumber,
             bankName: bank.bankName
           })
         } else if (isOpen) {
@@ -106,8 +105,8 @@ const BankInfoModal = ({ isOpen, onClose, onSuccess }: TCategoryModalProps) => {
             <label htmlFor="accountHolder">Account Holder</label>
             <input
               type="text"
-              id="accountHolder"
-              name="accountHolder"
+              id="accountName"
+              name="accountName"
               placeholder="Holder Name as registered on the account"
               value={formData.accountName}
               onChange={handleChange}

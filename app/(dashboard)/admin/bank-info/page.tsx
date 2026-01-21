@@ -48,7 +48,7 @@ const CategoryManagement = ()  => {
         await deleteBank(bankToDeleteId);
         toast.success("Bank info deleted successfully");
         setBankToDeleteId("")
-        setIsModalOpen(false);
+        setIsDeleteModalOpen(false);
         fetchBanks()
       } catch(error) {
         console.error("Failed too delete bank info")
@@ -58,7 +58,7 @@ const CategoryManagement = ()  => {
 
     useEffect(() => {
       fetchBanks()
-    })
+    }, []);
     return (
       <div>
         <div className="flex justify-between items-center mb-10">

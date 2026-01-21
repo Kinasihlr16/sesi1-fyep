@@ -29,7 +29,7 @@ export const updateBank = async (id: string, data: Partial<Bank>): Promise<Bank>
 
 export const deleteBank = async (id: string) : Promise<void> => {
     return await fetchAPI<void>(`/banks/${id}`, {
-    method: "POST",
+    method: "DELETE",
     headers: {
       ...getAuthHeaders(),
       "Content-Type": "application/json",
